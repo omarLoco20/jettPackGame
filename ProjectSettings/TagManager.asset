@@ -8,6 +8,7 @@ TagManager:
   - spawnerElementos
   - spawnerEnemy
   - rayo
+  - spawnerMisil
   layers:
   - Default
   - TransparentFX

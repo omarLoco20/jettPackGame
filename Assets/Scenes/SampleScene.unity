@@ -769,6 +769,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052228801}
   m_CullTransparentMesh: 1
+--- !u!1 &1225184610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225184612}
+  - component: {fileID: 1225184611}
+  m_Layer: 0
+  m_Name: spawnMisil
+  m_TagString: spawnerMisil
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1225184611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225184610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df48dcbd6d27fc245b895541eaec3611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misil: {fileID: 1244227929653626717, guid: 4222fa5e71ab1a34697d2ab41fe7ec2f, type: 3}
+  listaOvnisYBasura: []
+  posicionPartida: {x: 11.12, y: 0}
+  yMin: -2.46
+  yMax: 3.84
+--- !u!4 &1225184612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225184610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5810897, y: 0.581887, z: -0.042817682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405462872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,3 +1588,4 @@ SceneRoots:
   - {fileID: 1636548028}
   - {fileID: 1692717249}
   - {fileID: 1405462874}
+  - {fileID: 1225184612}
