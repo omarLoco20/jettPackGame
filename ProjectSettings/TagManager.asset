@@ -6,6 +6,8 @@ TagManager:
   tags:
   - detector
   - spawnerElementos
+  - spawnerEnemy
+  - rayo
   layers:
   - Default
   - TransparentFX

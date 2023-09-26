@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.SceneManagement;
 public class playerJett : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -9,9 +10,16 @@ public class playerJett : MonoBehaviour
     float collDawn = 0;
     public float forceIntervalo;
     Rigidbody2D rb;
+    int coins;
+
+    public TextMeshProUGUI coinsText;
+    public scriptablePlayer sp;
     void Start()
     {
+        coins = sp.coins;
+
         rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("contador", 1, 1);
     }
 
     // Update is called once per frame
@@ -40,5 +48,27 @@ public class playerJett : MonoBehaviour
 
         }
 
+       
+
     }
+
+
+    public void contador()
+    {
+
+        coins++;
+        coinsText.text = "Coins: " + coins;
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "rayo")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+
+
 }
