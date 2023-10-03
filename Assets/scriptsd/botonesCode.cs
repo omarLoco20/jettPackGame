@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class botonesCode : MonoBehaviour
 {
     public GameObject panelOpciones;
+    public ScriptableSelector p1;
+    public ScriptableSelector p2;
+    public ScriptableSelector p3;
+    public ScriptableSelector pActual;
 
-   public void GoPLay()
+
+
+    public void GoPLay()
     {
         SceneManager.LoadScene("SampleScene");
     }
@@ -25,5 +31,21 @@ public class botonesCode : MonoBehaviour
     {
         panelOpciones.SetActive(false);
 
+    }
+    public void selectP1()
+    {
+        pActual.life = p1.life;
+        pActual.force = p1.force;
+    }
+    public void selectP2()
+    {
+        pActual.life = p2.life;
+        pActual.force = p2.force;
+    }
+
+    public void selectP3()
+    {
+        pActual.life = p3.life;
+        pActual.force = p3.force;
     }
 }

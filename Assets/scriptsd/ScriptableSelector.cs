@@ -8,4 +8,6 @@ public class ScriptableSelector : ScriptableObject
     public int life;
     public float force;
 
+
+
 }
