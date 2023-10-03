@@ -8,7 +8,7 @@ public class alertaScript : MonoBehaviour
     void Start()
     {
         
-        Invoke("autoDestruccion", 1);
+        Invoke("autoDestruccion", 0.5f);
     }
 
     // Update is called once per frame
