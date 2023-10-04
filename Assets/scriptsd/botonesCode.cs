@@ -12,10 +12,20 @@ public class botonesCode : MonoBehaviour
     public ScriptableSelector pActual;
 
 
+    public void menuIr()
+    {
+        SceneManager.LoadScene("menu");
+    }
 
     public void GoPLay()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void selectorCharacter()
+    {
+        SceneManager.LoadScene("seleccionPlayer");
+
     }
 
     public void exit()
@@ -36,16 +46,26 @@ public class botonesCode : MonoBehaviour
     {
         pActual.life = p1.life;
         pActual.force = p1.force;
+        pActual.character = p1.character;
+        pActual.rotacion = p1.rotacion;
     }
     public void selectP2()
     {
         pActual.life = p2.life;
         pActual.force = p2.force;
+        pActual.character = p2.character;
+        pActual.rotacion = p2.rotacion;
+
+
     }
 
     public void selectP3()
     {
         pActual.life = p3.life;
         pActual.force = p3.force;
+        pActual.character = p3.character;
+        pActual.rotacion = p3.rotacion;
+
+
     }
 }

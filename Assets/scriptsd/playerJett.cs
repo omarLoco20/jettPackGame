@@ -7,13 +7,31 @@ public class playerJett : MonoBehaviour
 {
     // Start is called before the first frame update
     public float force;
+    public int life;
+    public Sprite spray;
     float collDawn = 0;
     public float forceIntervalo;
     Rigidbody2D rb;
     int coins;
+    public GameObject panelLose;
+    public TextMeshProUGUI lifeText;
 
     public TextMeshProUGUI coinsText;
     public scriptablePlayer sp;
+    public ScriptableSelector playerSeleccionado;
+
+    SpriteRenderer spriteRender;
+    private void Awake()
+    {
+        Time.timeScale = 1;
+        force = playerSeleccionado.force;
+        life = playerSeleccionado.life;
+        spriteRender = GetComponent<SpriteRenderer>();
+        spriteRender.sprite = playerSeleccionado.character;
+        lifeText.text = "Life: " + life;
+        transform.rotation = playerSeleccionado.rotacion;
+
+    }
     void Start()
     {
         coins = sp.coins;
@@ -48,7 +66,20 @@ public class playerJett : MonoBehaviour
 
         }
 
-       
+        if (Input.GetKey("w")|| Input.GetKey(KeyCode.UpArrow))
+        {
+            if (collDawn >= forceIntervalo)
+            {
+
+                rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+                collDawn = 0;
+
+            }
+            collDawn = collDawn + Time.deltaTime;
+            print(collDawn);
+        }
+
+
 
     }
 
@@ -66,7 +97,15 @@ public class playerJett : MonoBehaviour
     {
         if (collision.gameObject.tag == "rayo")
         {
-            SceneManager.LoadScene("SampleScene");
+            life--;
+            lifeText.text = "Life: " + life;
+            if (life <= 0)
+            {
+                
+                panelLose.SetActive(true);
+                Time.timeScale = 0;
+            }
+            
         }
     }
 
