@@ -21,6 +21,8 @@ public class playerJett : MonoBehaviour
     public ScriptableSelector playerSeleccionado;
 
     SpriteRenderer spriteRender;
+    public GameObject jett;
+    bool sePropulsa=false;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -29,7 +31,11 @@ public class playerJett : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
         spriteRender.sprite = playerSeleccionado.character;
         lifeText.text = "Life: " + life;
-        transform.rotation = playerSeleccionado.rotacion;
+        // transform.rotation = playerSeleccionado.rotacion;
+        if (playerSeleccionado.cambiarFlip)
+        {
+            spriteRender.flipX=true;
+        }
 
     }
     void Start()
@@ -43,6 +49,7 @@ public class playerJett : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (Input.touchCount > 0)
         {
@@ -55,6 +62,7 @@ public class playerJett : MonoBehaviour
                 if (collDawn >= forceIntervalo)
                 {
 
+                  //  jett.SetActive(true);
                     rb.AddForce(Vector2.up * force , ForceMode2D.Impulse);
                     collDawn = 0;
                     
@@ -68,8 +76,11 @@ public class playerJett : MonoBehaviour
 
         if (Input.GetKey("w")|| Input.GetKey(KeyCode.UpArrow))
         {
+            sePropulsa = true;
+           // jett.SetActive(true);
             if (collDawn >= forceIntervalo)
             {
+                
 
                 rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
                 collDawn = 0;
@@ -78,7 +89,13 @@ public class playerJett : MonoBehaviour
             collDawn = collDawn + Time.deltaTime;
             print(collDawn);
         }
+        else
+        {
+            //  jett.SetActive(false);
+            sePropulsa = false;
 
+        }
+        jett.SetActive(sePropulsa);
 
 
     }

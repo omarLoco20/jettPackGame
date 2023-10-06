@@ -47,14 +47,17 @@ public class botonesCode : MonoBehaviour
         pActual.life = p1.life;
         pActual.force = p1.force;
         pActual.character = p1.character;
-        pActual.rotacion = p1.rotacion;
+        // pActual.rotacion = p1.rotacion;
+        pActual.cambiarFlip = p1.cambiarFlip;
     }
     public void selectP2()
     {
         pActual.life = p2.life;
         pActual.force = p2.force;
         pActual.character = p2.character;
-        pActual.rotacion = p2.rotacion;
+        //  pActual.rotacion = p2.rotacion;
+        pActual.cambiarFlip = p2.cambiarFlip;
+
 
 
     }
@@ -64,7 +67,9 @@ public class botonesCode : MonoBehaviour
         pActual.life = p3.life;
         pActual.force = p3.force;
         pActual.character = p3.character;
-        pActual.rotacion = p3.rotacion;
+        // pActual.rotacion = p3.rotacion;
+        pActual.cambiarFlip = p3.cambiarFlip;
+
 
 
     }

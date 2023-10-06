@@ -15,4 +15,4 @@ MonoBehaviour:
   life: 2
   force: 2.8
   character: {fileID: 434290731, guid: 3213928dce22b544b836d223ec245e5b, type: 3}
-  rotacion: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  cambiarFlip: 1
