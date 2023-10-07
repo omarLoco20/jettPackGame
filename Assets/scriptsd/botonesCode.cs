@@ -10,12 +10,27 @@ public class botonesCode : MonoBehaviour
     public ScriptableSelector p2;
     public ScriptableSelector p3;
     public ScriptableSelector pActual;
+    public GameObject pausePanel;
 
+    public void pauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+
+    }
+
+    public void closePause()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
+    }
 
     public void menuIr()
     {
         SceneManager.LoadScene("menu");
     }
+
+    
 
     public void GoPLay()
     {
