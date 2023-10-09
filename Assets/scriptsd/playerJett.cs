@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class playerJett : MonoBehaviour
 {
+    public GameObject confeti;
     // Start is called before the first frame update
     public float force;
     public int life;
@@ -17,8 +18,12 @@ public class playerJett : MonoBehaviour
     public TextMeshProUGUI lifeText;
 
     public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI coinsText2;
+
+
     public scriptablePlayer sp;
     public ScriptableSelector playerSeleccionado;
+    public scriptableScore scoreManage;
 
     SpriteRenderer spriteRender;
     public GameObject jett;
@@ -61,20 +66,20 @@ public class playerJett : MonoBehaviour
             {
                 if (collDawn >= forceIntervalo)
                 {
-
-                  //  jett.SetActive(true);
+                    sePropulsa = true;
+                    //  jett.SetActive(true);
                     rb.AddForce(Vector2.up * force , ForceMode2D.Impulse);
                     collDawn = 0;
                     
                 }
                 collDawn = collDawn + Time.deltaTime;
-                print(collDawn);
+               // print(collDawn);
             }
 
 
         }
 
-        if (Input.GetKey("w")|| Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey("w")|| Input.GetKey(KeyCode.UpArrow))
         {
             sePropulsa = true;
            // jett.SetActive(true);
@@ -87,7 +92,7 @@ public class playerJett : MonoBehaviour
 
             }
             collDawn = collDawn + Time.deltaTime;
-            print(collDawn);
+            //print(collDawn);
         }
         else
         {
@@ -97,16 +102,19 @@ public class playerJett : MonoBehaviour
         }
         jett.SetActive(sePropulsa);
 
+        
 
     }
 
 
     public void contador()
     {
-
-        coins++;
-        coinsText.text = "Coins: " + coins;
-
+        if (life > 0)
+        {
+            coins++;
+            coinsText.text = "Coins: " + coins;
+            coinsText2.text = "Coins: " + coins;
+        }
 
     }
 
@@ -118,9 +126,17 @@ public class playerJett : MonoBehaviour
             lifeText.text = "Life: " + life;
             if (life <= 0)
             {
-                
+                if (scoreManage.compareBest(coins))
+                {
+                    print("entroLaFuncion");
+                    confeti.SetActive(true);
+                }
+
                 panelLose.SetActive(true);
-                Time.timeScale = 0;
+                
+                scoreManage.AddHighScore(coins);
+                //Time.timeScale = 0;
+
             }
             
         }

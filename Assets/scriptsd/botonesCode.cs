@@ -11,7 +11,18 @@ public class botonesCode : MonoBehaviour
     public ScriptableSelector p3;
     public ScriptableSelector pActual;
     public GameObject pausePanel;
+    public GameObject listaScore;
 
+
+    public void abrirListaScore()
+    {
+        listaScore.SetActive(true);
+    }
+    public void cerrarListaScore()
+    {
+        listaScore.SetActive(false);
+
+    }
     public void pauseGame()
     {
         pausePanel.SetActive(true);
