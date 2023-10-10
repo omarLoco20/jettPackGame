@@ -135,7 +135,9 @@ public class playerJett : MonoBehaviour
                 panelLose.SetActive(true);
                 
                 scoreManage.AddHighScore(coins);
-                //Time.timeScale = 0;
+                // Time.timeScale = 0;
+                transform.position = new Vector2(100, 100);
+                rb.gravityScale = 0;
 
             }
             

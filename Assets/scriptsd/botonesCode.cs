@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class botonesCode : MonoBehaviour
 {
@@ -12,7 +13,18 @@ public class botonesCode : MonoBehaviour
     public ScriptableSelector pActual;
     public GameObject pausePanel;
     public GameObject listaScore;
+    [SerializeField] private string newScene;
+   /* public int currentGold;
+    [SerializeField] private int myGold;*/
+   // public int defGold { private set; get; }
 
+    //private Button myButton;
+    /*
+    private void Start()
+    {
+        myButton.onClick.AddListener(() => LoadScene("menu"));
+
+    }*/
 
     public void abrirListaScore()
     {
@@ -46,6 +58,7 @@ public class botonesCode : MonoBehaviour
     public void GoPLay()
     {
         SceneManager.LoadScene("SampleScene");
+       // LoadScene("SampleScene");
     }
 
     public void selectorCharacter()
@@ -53,6 +66,11 @@ public class botonesCode : MonoBehaviour
         SceneManager.LoadScene("seleccionPlayer");
 
     }
+    /*
+    private void LoadScene(string sceneToLoad)
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }*/
 
     public void exit()
     {

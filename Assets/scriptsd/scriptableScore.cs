@@ -8,7 +8,7 @@ public class scriptableScore : ScriptableObject
 {
   public List<int> highScores;
 
-    private const int maxHighScores = 6; // Define la cantidad máxima de puntajes a mantener.
+    private int maxHighScores = 6; // Define la cantidad máxima de puntajes a mantener.
    // public GameObject confeti;
 
     public List<int> GetHighScores()
