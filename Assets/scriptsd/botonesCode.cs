@@ -13,10 +13,21 @@ public class botonesCode : MonoBehaviour
     public ScriptableSelector pActual;
     public GameObject pausePanel;
     public GameObject listaScore;
-    [SerializeField] private string newScene;
-   /* public int currentGold;
-    [SerializeField] private int myGold;*/
-   // public int defGold { private set; get; }
+    [SerializeField] string newScene;
+
+    string menu= "menu";
+    string game = "SampleScene";
+    string seleccionar = "seleccionPlayer";
+
+    private void Start()
+    {
+        SceneManager.LoadScene("splash", LoadSceneMode.Additive);
+    }
+
+
+    /* public int currentGold;
+     [SerializeField] private int myGold;*/
+    // public int defGold { private set; get; }
 
     //private Button myButton;
     /*
@@ -50,20 +61,20 @@ public class botonesCode : MonoBehaviour
 
     public void menuIr()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene(menu);
     }
 
     
 
     public void GoPLay()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(game);
        // LoadScene("SampleScene");
     }
 
     public void selectorCharacter()
     {
-        SceneManager.LoadScene("seleccionPlayer");
+        SceneManager.LoadScene(seleccionar);
 
     }
     /*
