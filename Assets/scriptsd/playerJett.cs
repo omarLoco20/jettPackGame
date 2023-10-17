@@ -13,7 +13,7 @@ public class playerJett : MonoBehaviour
     float collDawn = 0;
     public float forceIntervalo;
     Rigidbody2D rb;
-    int coins;
+    int score;
     public GameObject panelLose;
     public TextMeshProUGUI lifeText;
 
@@ -41,11 +41,12 @@ public class playerJett : MonoBehaviour
         {
             spriteRender.flipX=true;
         }
+        
 
     }
     void Start()
     {
-        coins = sp.coins;
+        score = sp.coins;
 
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("contador", 1, 1);
@@ -111,9 +112,9 @@ public class playerJett : MonoBehaviour
     {
         if (life > 0)
         {
-            coins++;
-            coinsText.text = "Coins: " + coins;
-            coinsText2.text = "Coins: " + coins;
+            score++;
+            coinsText.text = "Coins: " + score;
+            coinsText2.text = "Coins: " + score;
         }
 
     }
@@ -126,21 +127,28 @@ public class playerJett : MonoBehaviour
             lifeText.text = "Life: " + life;
             if (life <= 0)
             {
-                if (scoreManage.compareBest(coins))
+                if (scoreManage.compareBest(score))
                 {
                     print("entroLaFuncion");
                     confeti.SetActive(true);
                 }
 
+                playerSeleccionado.coins += score;
                 panelLose.SetActive(true);
                 
-                scoreManage.AddHighScore(coins);
+                scoreManage.AddHighScore(score);
                 // Time.timeScale = 0;
                 transform.position = new Vector2(100, 100);
                 rb.gravityScale = 0;
 
             }
             
+        }
+        if (collision.gameObject.tag == "coin")
+        {
+            score++;
+            coinsText.text = "Coins: " + score;
+            coinsText2.text = "Coins: " + score;
         }
     }
 

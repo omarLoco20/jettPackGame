@@ -968,6 +968,7 @@ MonoBehaviour:
   pActual: {fileID: 0}
   pausePanel: {fileID: 1176915528}
   listaScore: {fileID: 0}
+  newScene: 
 --- !u!4 &286165758
 Transform:
   m_ObjectHideFlags: 0
@@ -2535,6 +2536,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164996306}
   m_CullTransparentMesh: 1
+--- !u!1 &1165835580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165835582}
+  - component: {fileID: 1165835581}
+  m_Layer: 0
+  m_Name: spawnCoins
+  m_TagString: spawnerCoins
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165835581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165835580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378b47c364712c242bea633a61f56cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin1: {fileID: 6498449877471566770, guid: 970aaa1d6cb04044487fc808022f148f, type: 3}
+  coin2: {fileID: 8581315725642835694, guid: 930c1cc2f5346c444b82ed79084b6f7d, type: 3}
+  listaCoinsGroup: []
+  posicionPartida: {x: 15.61, y: 0}
+  yMin: -0.39
+  yMax: 3.53
+--- !u!4 &1165835582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165835580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.61, y: 1.31, z: -0.067684084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176915528
 GameObject:
   m_ObjectHideFlags: 0
@@ -9266,3 +9317,4 @@ SceneRoots:
   - {fileID: 1836951359}
   - {fileID: 1225184612}
   - {fileID: 2054976526}
+  - {fileID: 1165835582}

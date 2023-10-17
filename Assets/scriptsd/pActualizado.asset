@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122ae734796e7f54089f4a18f1639041, type: 3}
   m_Name: pActualizado
   m_EditorClassIdentifier: 
-  life: 0
-  force: 0
+  life: 1
+  force: 3.5
+  character: {fileID: -1498817639, guid: 3213928dce22b544b836d223ec245e5b, type: 3}
+  cambiarFlip: 1
+  coins: 111

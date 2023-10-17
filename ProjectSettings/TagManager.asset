@@ -9,6 +9,9 @@ TagManager:
   - spawnerEnemy
   - rayo
   - spawnerMisil
+  - coin
+  - spawnerCoin
+  - spawnerCoins
   layers:
   - Default
   - TransparentFX
