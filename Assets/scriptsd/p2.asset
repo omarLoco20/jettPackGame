@@ -16,3 +16,5 @@ MonoBehaviour:
   force: 2.8
   character: {fileID: 434290731, guid: 3213928dce22b544b836d223ec245e5b, type: 3}
   cambiarFlip: 1
+  coins: 0
+  comprado: 0

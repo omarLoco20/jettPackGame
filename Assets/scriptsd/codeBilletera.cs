@@ -12,5 +12,10 @@ public class codeBilletera : MonoBehaviour
         textCoins.text = "" + sp.coins;
     }
 
+    public void actualizarMonedero()
+    {
+        textCoins.text = "" + sp.coins;
+    }
+
    
 }
