@@ -7,5 +7,8 @@ public class scriptableMusic : ScriptableObject
 {
 
     public AudioClip musicBackground;
+    public AudioClip propulsor;
+    public AudioClip musicGame;
+    
 
 }

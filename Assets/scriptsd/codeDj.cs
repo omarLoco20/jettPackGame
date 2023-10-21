@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class codeDj : MonoBehaviour
 {
-    AudioSource audioS;
+   public AudioSource audioS;
     public scriptableMusic musicas;
    
     // Start is called before the first frame update
@@ -13,7 +13,7 @@ public class codeDj : MonoBehaviour
 
         /* audioS = GetComponent<AudioSource>();
          audioS.PlayOneShot(musicas.musicBackground);*/
-        DontDestroyOnLoad(this.gameObject);
+       // DontDestroyOnLoad(this.gameObject);
             
     }
 

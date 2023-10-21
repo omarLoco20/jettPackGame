@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: musicas
   m_EditorClassIdentifier: 
   musicBackground: {fileID: 8300000, guid: f2a16a76766536a4f85d53f6cf139448, type: 3}
+  propulsor: {fileID: 8300000, guid: 7e2d2fb2bd8721847a7c027f4e046d29, type: 3}
+  musicGame: {fileID: 0}

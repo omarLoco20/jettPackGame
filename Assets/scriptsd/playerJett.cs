@@ -28,6 +28,10 @@ public class playerJett : MonoBehaviour
     SpriteRenderer spriteRender;
     public GameObject jett;
     bool sePropulsa=false;
+
+    public AudioSource audioS;
+    public AudioClip propulsor;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -71,8 +75,12 @@ public class playerJett : MonoBehaviour
                     //  jett.SetActive(true);
                     rb.AddForce(Vector2.up * force , ForceMode2D.Impulse);
                     collDawn = 0;
-                    
+
+                    audioS.PlayOneShot(propulsor);
+
+
                 }
+
                 collDawn = collDawn + Time.deltaTime;
                // print(collDawn);
             }
@@ -85,12 +93,15 @@ public class playerJett : MonoBehaviour
             sePropulsa = true;
            // jett.SetActive(true);
             if (collDawn >= forceIntervalo)
-            {
-                
+            {               
 
                 rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
                 collDawn = 0;
-
+               
+                    // Si no se está reproduciendo ningún sonido, reproduce el nuevo sonido.
+                    audioS.PlayOneShot(propulsor);
+                
+               
             }
             collDawn = collDawn + Time.deltaTime;
             //print(collDawn);
@@ -116,6 +127,12 @@ public class playerJett : MonoBehaviour
             coinsText.text = "Coins: " + score;
             coinsText2.text = "Coins: " + score;
         }
+
+    }
+
+    void propulsorFunction()
+    {
+        audioS.PlayOneShot(propulsor);
 
     }
 
