@@ -5,25 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class passScene : MonoBehaviour
 {
-    public string menu="menu";
-    
+    //public string menu="menu";
+    //private string nameMenu;
+
+    private void Awake()
+    {
+        //nameMenu = SceneManager.GetActiveScene().name;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        string nombreDeEscenaActual = SceneManager.GetActiveScene().name;
-        if (nombreDeEscenaActual == "splash")
+        //string nombreDeEscenaActual = SceneManager.GetActiveScene().name;
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("splash"))
         {
-            Invoke("irMenu", 4f);
+            Invoke("ChangeScene", 4f);
         }
-        if (nombreDeEscenaActual != "splash")
+        else
         {
             this.gameObject.SetActive(false);
         }
+
     }
 
-   void irMenu()
+    void ChangeScene()
     {
-        SceneManager.LoadScene(menu);
-       
+        SceneManager.LoadScene("menu");
+
     }
 }
