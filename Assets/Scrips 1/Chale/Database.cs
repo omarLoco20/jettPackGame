@@ -246,12 +246,14 @@ public struct User
     public string firstName;
     public string lastName;
     public int codeID;
+    public int puntaje;
     public string email;
     public string password;
-    public User(string firstName, string lastName, int codeID, string emAil, string Password)
+    public User(string firstName, string lastName, int puntaje, int codeID, string emAil, string Password)
     {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.puntaje = puntaje;
         this.codeID = codeID;
         this.email = emAil;
         this.password = Password;
