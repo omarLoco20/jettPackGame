@@ -81,12 +81,13 @@ public class botonesCode : MonoBehaviour
         pActual.force = player.force;
         pActual.character = player.character;
         pActual.cambiarFlip = player.cambiarFlip;
+        //player.comprado = true;
         //pActual.comprado = bought;
     }
-    public void Bought(bool bought)
-    {
-        pActual.comprado = bought;
-    }
+    //public void Bought(ScriptableSelector player)
+    //{
+    //    player.comprado = true;
+    //}
     public void buyPlayer2()
     {
         if (pActual.coins >= precioPl2)
