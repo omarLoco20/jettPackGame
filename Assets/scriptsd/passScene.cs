@@ -16,7 +16,7 @@ public class passScene : MonoBehaviour
     void Start()
     {
         //string nombreDeEscenaActual = SceneManager.GetActiveScene().name;
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("splash"))
+        if (SceneManager.GetActiveScene().name == "splash")
         {
             Invoke("ChangeScene", 4f);
         }
@@ -29,7 +29,7 @@ public class passScene : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene(2);
 
     }
 }

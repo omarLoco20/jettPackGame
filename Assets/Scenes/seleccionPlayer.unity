@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5154d7996063499419854e4aeef3800f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioS: {fileID: 0}
   musicas: {fileID: 11400000, guid: 9e3c7f44d89bebb4d9a47cf976cc262b, type: 2}
 --- !u!82 &289116523
 AudioSource:
@@ -631,7 +632,7 @@ Transform:
   m_GameObject: {fileID: 347233645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 496.81696, y: 230.33499, z: 2.0561159}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1013,15 +1014,27 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2118203103}
         m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
-        m_MethodName: selectP3
-        m_Mode: 1
+        m_MethodName: SelectPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 140dd4806b6b9bb468c3a54c9770769a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableSelector, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118203103}
+        m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
+        m_MethodName: Bought
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &577623598
 MonoBehaviour:
@@ -1498,15 +1511,27 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2118203103}
         m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
-        m_MethodName: selectP2
-        m_Mode: 1
+        m_MethodName: SelectPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: e28be1591c6312745a2672be849c68c7, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableSelector, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118203103}
+        m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
+        m_MethodName: Bought
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &685857975
 MonoBehaviour:
@@ -1631,14 +1656,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2118203103}
         m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
-        m_MethodName: GoPLay
-        m_Mode: 1
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &893693058
@@ -2468,11 +2493,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2118203103}
         m_TargetAssemblyTypeName: botonesCode, Assembly-CSharp
-        m_MethodName: selectP1
-        m_Mode: 1
+        m_MethodName: SelectPlayer
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: b126d5ba511431f41ac5402b75d17846, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableSelector, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

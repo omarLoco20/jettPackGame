@@ -8,13 +8,13 @@ public class botonesCode : MonoBehaviour
 {
     public codeBilletera cbilletera;
 
-    public GameObject panelOpciones;
+    //public GameObject panelOpciones;
     public ScriptableSelector p1;
     public ScriptableSelector p2;
     public ScriptableSelector p3;
     public ScriptableSelector pActual;
-    public GameObject pausePanel;
-    public GameObject listaScore;
+    //public GameObject pausePanel;
+    //public GameObject listaScore;
     [SerializeField] string newScene;
 
     public Button btnPl2;
@@ -26,18 +26,17 @@ public class botonesCode : MonoBehaviour
     public GameObject pnlBlock2;
     public GameObject pnlBlock3;
 
-    string menu= "menu";
-    string game = "SampleScene";
-    string seleccionar = "seleccionPlayer";
+    //string menu= "menu";
+    //string game = "SampleScene";
+    //string seleccionar = "seleccionPlayer";
     int precioPl2 = 3000;
     int precioPl3 = 1000;
 
     private void Start()
     {
-        SceneManager.LoadScene("splash", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("splash", LoadSceneMode.Additive);
 
-        string nombreDeEscenaActual = SceneManager.GetActiveScene().name;
-        if (nombreDeEscenaActual == "seleccionPlayer")
+        if (SceneManager.GetActiveScene().name == "seleccionPlayer")
         {
             if (p2.comprado)
             {
@@ -45,7 +44,6 @@ public class botonesCode : MonoBehaviour
                 buyPl2.interactable = false;
                 btnPl2.interactable = true;
             }
-
             if (p3.comprado)
             {
                 pnlBlock3.SetActive(false);
@@ -54,116 +52,41 @@ public class botonesCode : MonoBehaviour
             }
         }
     }
-
-
-    /* public int currentGold;
-     [SerializeField] private int myGold;*/
-    // public int defGold { private set; get; }
-
-    //private Button myButton;
-    /*
-    private void Start()
+    public void ChangeScene(string scene)
     {
-        myButton.onClick.AddListener(() => LoadScene("menu"));
-
-    }*/
-
-    public void abrirListaScore()
-    {
-        listaScore.SetActive(true);
+        SceneManager.LoadScene(scene);
     }
-    public void cerrarListaScore()
+    public void OpenPanel(GameObject panel)
     {
-        listaScore.SetActive(false);
-
+        panel.SetActive(true);
     }
-    public void pauseGame()
-    {
-        pausePanel.SetActive(true);
-        Time.timeScale = 0;
-
+    public void ClosePanel(GameObject panel) 
+    { 
+        panel.SetActive(false);
     }
-
-    public void closePause()
+    public void Pause(bool pause)
     {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1;
+        if (pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
-
-    public void menuIr()
+    public void SelectPlayer(ScriptableSelector player) //bool bought)
     {
-        SceneManager.LoadScene(menu);
+        pActual.life = player.life;
+        pActual.force = player.force;
+        pActual.character = player.character;
+        pActual.cambiarFlip = player.cambiarFlip;
+        //pActual.comprado = bought;
     }
-
-    
-
-    public void GoPLay()
+    public void Bought(bool bought)
     {
-        SceneManager.LoadScene(game);
-       // LoadScene("SampleScene");
+        pActual.comprado = bought;
     }
-
-    public void selectorCharacter()
-    {
-        SceneManager.LoadScene(seleccionar);
-
-    }
-    /*
-    private void LoadScene(string sceneToLoad)
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }*/
-
-    public void exit()
-    {
-        Application.Quit();
-    }
-
-    public void options()
-    {
-        panelOpciones.SetActive(true);
-    }
-    public void closeOptions()
-    {
-        panelOpciones.SetActive(false);
-
-    }
-    public void selectP1()
-    {
-        pActual.life = p1.life;
-        pActual.force = p1.force;
-        pActual.character = p1.character;
-        // pActual.rotacion = p1.rotacion;
-        pActual.cambiarFlip = p1.cambiarFlip;
-    }
-    public void selectP2()
-    {
-        pActual.life = p2.life;
-        pActual.force = p2.force;
-        pActual.character = p2.character;
-        //  pActual.rotacion = p2.rotacion;
-        pActual.cambiarFlip = p2.cambiarFlip;
-        p2.comprado = true;
-
-
-
-    }
-
-    public void selectP3()
-    {
-        pActual.life = p3.life;
-        pActual.force = p3.force;
-        pActual.character = p3.character;
-        // pActual.rotacion = p3.rotacion;
-        pActual.cambiarFlip = p3.cambiarFlip;
-        p3.comprado = true;
-
-
-
-    }
-
-    // COMPRAR FUNCTIONS
-
     public void buyPlayer2()
     {
         if (pActual.coins >= precioPl2)
@@ -188,4 +111,94 @@ public class botonesCode : MonoBehaviour
 
         }
     }
+    public void exit()
+    {
+        Application.Quit();
+    }
+
+    // Antes del refactory xd
+
+    //public void abrirListaScore()
+    //{
+    //    listaScore.SetActive(true);
+    //}
+    //public void cerrarListaScore()
+    //{
+    //    listaScore.SetActive(false);
+
+    //}
+    //public void pauseGame()
+    //{
+    //    pausePanel.SetActive(true);
+    //    Time.timeScale = 0;
+
+    //}
+
+    //public void closePause()
+    //{
+    //    pausePanel.SetActive(false);
+    //    Time.timeScale = 1;
+    //}
+
+    
+
+    //public void menuIr()
+    //{
+    //    SceneManager.LoadScene(menu);
+    //}
+    //public void GoPLay()
+    //{
+    //    SceneManager.LoadScene(game);
+    //}
+
+    //public void selectorCharacter()
+    //{
+    //    SceneManager.LoadScene(seleccionar);
+
+    //}
+   
+
+    //public void options()
+    //{
+    //    panelOpciones.SetActive(true);
+    //}
+    //public void closeOptions()
+    //{
+    //    panelOpciones.SetActive(false);
+
+    //}
+
+
+    
+    //public void selectP1()
+    //{
+    //    pActual.life = p1.life;
+    //    pActual.force = p1.force;
+    //    pActual.character = p1.character;
+    //    // pActual.rotacion = p1.rotacion;
+    //    pActual.cambiarFlip = p1.cambiarFlip;
+    //}
+    //public void selectP2()
+    //{
+    //    pActual.life = p2.life;
+    //    pActual.force = p2.force;
+    //    pActual.character = p2.character;
+    //    //  pActual.rotacion = p2.rotacion;
+    //    pActual.cambiarFlip = p2.cambiarFlip;
+    //    p2.comprado = true;
+    //}
+
+    //public void selectP3()
+    //{
+    //    pActual.life = p3.life;
+    //    pActual.force = p3.force;
+    //    pActual.character = p3.character;
+    //    // pActual.rotacion = p3.rotacion;
+    //    pActual.cambiarFlip = p3.cambiarFlip;
+    //    p3.comprado = true;
+    //}
+
+    // COMPRAR FUNCTIONS
+
+   
 }

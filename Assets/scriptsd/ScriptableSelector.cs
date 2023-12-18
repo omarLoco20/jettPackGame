@@ -8,7 +8,6 @@ public class ScriptableSelector : ScriptableObject
     public int life;
     public float force;
     public Sprite character;
-    // public Quaternion rotacion;
     public bool cambiarFlip;
     public int coins;
     public bool comprado;
