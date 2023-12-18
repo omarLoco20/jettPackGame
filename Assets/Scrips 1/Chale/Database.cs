@@ -18,7 +18,7 @@ public class Database : MonoBehaviour
 
     public UIManager dato;
 
-    private  User user;
+    private User user;
 
     private DatabaseReference dataReference;
 
@@ -30,7 +30,7 @@ public class Database : MonoBehaviour
     {
         userID = SystemInfo.deviceUniqueIdentifier;
 
-     
+
     }
 
     void Start()
@@ -42,7 +42,7 @@ public class Database : MonoBehaviour
     }
     public void CreateUser()
     {
-         user = new User();
+        user = new User();
         if (IsValidEmail(UserEmailInput.text))
         {
             Debug.Log("Correo electrónico válido: " + UserEmailInput.text);
@@ -66,7 +66,7 @@ public class Database : MonoBehaviour
         {
             Debug.LogError("Formato de correo electrónico incorrecto");
         }
-        if(user.password == null)
+        if (user.password == null)
         {
             user.password = UserPasswordInput.text;
             string json = JsonUtility.ToJson(user);
@@ -87,15 +87,15 @@ public class Database : MonoBehaviour
         {
             Debug.LogError("Ingrese Contraseña...");
         }
-       
-        
+
+
     }
 
     //Actualiza Datos - correo
     public void ChangeUsername(string newUserEmail)
     {
         dataReference.Child("users").Child(idKey).Child("email").SetValueAsync(newUserEmail);
-        
+
     }
 
     public void UpdateScore(string score)
@@ -214,7 +214,7 @@ public class Database : MonoBehaviour
             }
         });
     }
-   
+
     public void GetUserInfo()
     {
         StartCoroutine(GetFirstName(PrintData));
@@ -246,18 +246,15 @@ public struct User
     public string firstName;
     public string lastName;
     public int codeID;
-    public int puntaje;
     public string email;
     public string password;
-    public User(string firstName, string lastName, int puntaje, int codeID, string emAil, string Password)
+    public User(string firstName, string lastName, int codeID, string emAil, string Password)
     {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.puntaje = puntaje;
         this.codeID = codeID;
         this.email = emAil;
         this.password = Password;
     }
 
 }
-
